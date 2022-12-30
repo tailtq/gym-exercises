@@ -1,27 +1,29 @@
-import HomePage from '/assets/js/pages/Home.vue.js';
-import BodyPartPage from '/assets/js/pages/BodyPart.vue.js';
-import BodyPartDetailPage from '/assets/js/pages/BodyPartDetail.vue.js';
-import Navbar from '/assets/js/components/Navbar.vue.js';
-import FitnessList from '/assets/js/components/FitnessList.vue.js';
-import FitnessListItem from '/assets/js/components/FitnessListItem.vue.js';
+import HomePage from './pages/Home.vue.js';
+import BodyPartPage from './pages/BodyPart.vue.js';
+import BodyPartDetailPage from './pages/BodyPartDetail.vue.js';
+import Navbar from './components/Navbar.vue.js';
+import FitnessList from './components/FitnessList.vue.js';
+import FitnessListItem from './components/FitnessListItem.vue.js';
 import TextConverterMixins from './mixins/TextConverter.js';
 import ChunkMixins from './mixins/Chunk.js';
 
+const pathPrefix = '/gym-exercises';
+
 const router = VueRouter.createRouter({
-    history: VueRouter.createWebHistory(),
+    history: VueRouter.createMemoryHistory(),
     routes: [
         {
-            path: '/',
+            path: '',
             name: 'home',
             component: HomePage,
         },
         {
-            path: '/body-part/:bodyPart',
+            path: `${pathPrefix}/body-part/:bodyPart`,
             name: 'bodyPartExerciseList',
             component: BodyPartPage,
         },
         {
-            path: '/:slug',
+            path: `${pathPrefix}/:slug`,
             name: 'bodyPartExerciseDetail',
             component: BodyPartDetailPage,
         },

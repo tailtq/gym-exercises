@@ -1,4 +1,4 @@
-import exercises from '/assets/data/fitness.json' assert { type: 'json' };
+import exercises from '../../data/fitness.json' assert { type: 'json' };
 
 const EXERCISE_MAPPING = {};
 
