@@ -1,4 +1,4 @@
-import exercises from '../../data/fitness.json' assert { type: 'json' };
+import exercises from '../../data/fitness.json' with { type: 'json' };
 import Constants from '../mixins/Constants.js';
 
 export default {
